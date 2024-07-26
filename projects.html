@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wassuples - Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styleprojects.css">
+</head>
+<body>
+    <div id="particles-js"></div>
+    <header>
+        <h1>
+            <a href="index.html">
+                <span class="char">W</span>
+                <span class="char">a</span>
+                <span class="char">s</span>
+                <span class="char">s</span>
+                <span class="char">u</span>
+                <span class="char">p</span>
+                <span class="char">l</span>
+                <span class="char">e</span>
+                <span class="char">s</span>
+            </a>
+        </h1>
+    </header>
+    <main id="repo-list">
+        <!-- Repository entries will be injected here by JavaScript -->
+    </main>
+    <nav>
+        <ul>
+            <li><a href="#about" id="about-btn">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+        </ul>
+    </nav>
+    <!-- Modal structure -->
+    <div id="about-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>I am a <span id="age"></span> year old "programmer" that has created a couple "projects" which you can find <a href="https://github.com/Wassuples?tab=repositories" target="_blank">here</a>!</p>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="projects.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/dayjs.min.js"></script>
+</body>
+</html>

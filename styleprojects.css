@@ -1,0 +1,182 @@
+/* General styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #282c34; /* Background color */
+    color: #fff;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* Particles background */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Header and title styling */
+header {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Repository entries */
+#repo-list {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.repo-entry {
+    background-color: #333;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.repo-entry h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+.repo-entry a {
+    color: #61dafb;
+    text-decoration: none;
+}
+
+.repo-entry a:hover {
+    text-decoration: underline;
+}
+
+.repo-entry p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Navigation styling at the bottom */
+nav {
+    position: fixed;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: #61dafb;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700; /* Make the links bold */
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #61dafb;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+header h1 a {
+    color: #ffffff; /* Match the link color in the navigation */
+    text-decoration: none; /* Remove underline */
+    position: relative;
+}
+
+header h1 a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #61dafb; /* Color of the underline */
+    transition: width 0.3s; /* Animation duration */
+    position: absolute;
+    bottom: 10px; /* Position of the underline */
+    left: 0;
+}
+
+header h1 a:hover::after {
+    width: 100%; /* Underline expands on hover */
+}
+
+/* Modal link styling */
+.modal-content a {
+    color: #61dafb; /* Match the color of the navigation links */
+    text-decoration: none; /* Remove underline */
+}
+
+.modal-content a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Slightly darkened background */
+}
+
+.modal-content {
+    background-color: #333; /* Lighter version of the background color */
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Shadow effect */
+    font-family: 'Roboto', sans-serif; /* Apply font to modal content */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}

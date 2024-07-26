@@ -1,0 +1,189 @@
+/* Other existing styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #282c34; /* Background color */
+    color: #fff;
+    overflow: hidden;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+#overlay-left, #overlay-right {
+    position: fixed;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #282c34;
+    z-index: 2;
+    transition: width 1.5s ease;
+}
+
+#overlay-left {
+    left: 0;
+}
+
+#overlay-right {
+    right: 0;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 20px;
+    z-index: 1;
+}
+
+#name {
+    font-size: 4rem;
+    letter-spacing: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Apply the font to the entire page */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #282c34; /* Background color */
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Slightly darkened background */
+}
+
+.modal-content {
+    background-color: #333; /* Lighter version of the background color */
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Shadow effect */
+    font-family: 'Roboto', sans-serif; /* Apply font to modal content */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Header and name styling */
+header {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 20px;
+    z-index: 1;
+}
+
+#name {
+    font-size: 4rem;
+    font-weight: 700; /* Make the name bold */
+    letter-spacing: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Navigation styling */
+nav {
+    position: fixed;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: #61dafb;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700; /* Make the links bold */
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #61dafb;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Modal link styling */
+.modal-content a {
+    color: #61dafb; /* Match the color of the navigation links */
+    text-decoration: none; /* Remove underline */
+}
+
+.modal-content a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+header h1 a {
+    color: #ffffff; /* Match the link color in the navigation */
+    text-decoration: none; /* Remove underline */
+    position: relative;
+}
+
+header h1 a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #61dafb; /* Color of the underline */
+    transition: width 0.3s; /* Animation duration */
+    position: absolute;
+    bottom: 10px; /* Position of the underline */
+    left: 0;
+}
+
+header h1 a:hover::after {
+    width: 100%; /* Underline expands on hover */
+}
