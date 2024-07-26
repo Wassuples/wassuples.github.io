@@ -41,12 +41,31 @@ header h1 {
     margin: 0 auto;
 }
 
+/* Repository entries */
 .repo-entry {
     background-color: #333;
     margin: 10px 0;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+}
+
+/* Content section for repo */
+.repo-content {
+    flex: 1;
+}
+
+/* Chart section */
+.repo-chart {
+    margin-left: 15px;
+}
+
+/* Chart canvas */
+.repo-chart canvas {
+    max-width: 150px;
+    height: auto;
 }
 
 .repo-entry h2 {
