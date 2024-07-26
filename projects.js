@@ -46,13 +46,56 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(repos => {
             repos.forEach(repo => {
+                // Create a container for the repo entry and chart
                 const repoEntry = document.createElement('div');
                 repoEntry.className = 'repo-entry';
                 repoEntry.innerHTML = `
-                    <h2><a href="${repo.html_url}" target="_blank">${repo.name}</a></h2>
-                    <p>${repo.description || 'No description available.'}</p>
+                    <div class="repo-content">
+                        <h2><a href="${repo.html_url}" target="_blank">${repo.name}</a></h2>
+                        <p>${repo.description || 'No description available.'}</p>
+                    </div>
+                    <div class="repo-chart">
+                        <canvas id="chart-${repo.name}" width="150" height="150"></canvas>
+                    </div>
                 `;
                 repoList.appendChild(repoEntry);
+
+                // Fetch language data for this repo
+                fetch(`https://api.github.com/repos/${username}/${repo.name}/languages`)
+                    .then(response => response.json())
+                    .then(languages => {
+                        const ctx = document.getElementById(`chart-${repo.name}`).getContext('2d');
+                        const data = {
+                            labels: Object.keys(languages),
+                            datasets: [{
+                                data: Object.values(languages),
+                                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#E7E9ED']
+                            }]
+                        };
+
+                        new Chart(ctx, {
+                            type: 'pie',
+                            data: data,
+                            options: {
+                                responsive: true,
+                                plugins: {
+                                    legend: {
+                                        position: 'top',
+                                    },
+                                    tooltip: {
+                                        callbacks: {
+                                            label: function(tooltipItem) {
+                                                return `${tooltipItem.label}: ${tooltipItem.raw} bytes`;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        });
+                    })
+                    .catch(error => {
+                        console.error(`Error fetching languages for ${repo.name}:`, error);
+                    });
             });
         })
         .catch(error => {
